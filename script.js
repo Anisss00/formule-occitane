@@ -1,71 +1,27 @@
-// SCRIPT.JS - La Formule Occitane
+const pageBackgrounds = {
+    'index.html': ['assets/bg1.jpg', 'assets/bg2.jpg'],
+    'produits.html': ['assets/bg3.jpg', 'assets/bg4.jpg'],
+    'processus.html': ['assets/bg5.jpg', 'assets/bg6.jpg'],
+    'contact.html': ['assets/bg7.jpg', 'assets/bg8.jpg']
+};
 
-// Système de transitions d'images amélioré avec triple buffering
-const backgroundImages = [
-    'assets/bg1.jpg',
-    'assets/bg2.jpg',
-    'assets/bg3.jpg',
-    'assets/bg4.jpg',
-    'assets/bg5.jpg',
-    'assets/bg6.jpg'
-];
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const backgroundImages = pageBackgrounds[currentPage] || pageBackgrounds['index.html'];
 
 let currentImageIndex = 0;
 let bgLayers = [];
 const bgContainer = document.getElementById('bgContainer');
 
-// Créer 3 couches pour des transitions fluides
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 2; i++) {
     const layer = document.createElement('div');
     layer.className = 'bg-layer';
     bgContainer.appendChild(layer);
     bgLayers.push(layer);
 }
 
-// Activer la première image
 bgLayers[0].style.backgroundImage = `url(${backgroundImages[0]})`;
 bgLayers[0].classList.add('active');
 
-let nextLayerIndex = 1;
-let isTransitioning = false;
-
-function updateBackground() {
-    const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    const targetIndex = Math.min(Math.floor(scrollPercent * backgroundImages.length), backgroundImages.length - 1);
-    
-    if (targetIndex !== currentImageIndex && !isTransitioning) {
-        isTransitioning = true;
-        
-        // Préparer la couche suivante
-        const nextLayer = bgLayers[nextLayerIndex];
-        nextLayer.style.backgroundImage = `url(${backgroundImages[targetIndex]})`;
-        
-        // Attendre que l'image soit chargée
-        const img = new Image();
-        img.onload = () => {
-            // Transition vers la nouvelle image
-            requestAnimationFrame(() => {
-                nextLayer.classList.add('active');
-                
-                // Désactiver l'ancienne couche après la transition
-                setTimeout(() => {
-                    bgLayers.forEach((layer, index) => {
-                        if (index !== nextLayerIndex) {
-                            layer.classList.remove('active');
-                        }
-                    });
-                    
-                    currentImageIndex = targetIndex;
-                    nextLayerIndex = (nextLayerIndex + 1) % 3;
-                    isTransitioning = false;
-                }, 1500);
-            });
-        };
-        img.src = backgroundImages[targetIndex];
-    }
-}
-
-// Précharger toutes les images
 function preloadImages() {
     backgroundImages.forEach(src => {
         const img = new Image();
@@ -75,20 +31,23 @@ function preloadImages() {
 
 preloadImages();
 
-// Système de scroll optimisé avec requestAnimationFrame
-let ticking = false;
+function alternateBackground() {
+    const nextImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+    const currentLayer = bgLayers[currentImageIndex];
+    const nextLayer = bgLayers[nextImageIndex];
+    
+    nextLayer.style.backgroundImage = `url(${backgroundImages[nextImageIndex]})`;
+    
+    nextLayer.classList.add('active');
+    
+    setTimeout(() => {
+        currentLayer.classList.remove('active');
+        currentImageIndex = nextImageIndex;
+    }, 2000);
+}
 
-window.addEventListener('scroll', function() {
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-            updateBackground();
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
+setInterval(alternateBackground, 5000);
 
-// Smooth scroll pour les ancres
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -99,7 +58,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Gestion du formulaire
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -109,7 +67,6 @@ if (contactForm) {
     });
 }
 
-// Animation au scroll
 const observerOptions = {
     threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
@@ -143,7 +100,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observer tous les éléments animés
 document.querySelectorAll('.fade-in, .slide-left, .slide-right, .zoom-in').forEach(el => {
     observer.observe(el);
 });

@@ -1,4 +1,3 @@
-/* STYLES.CSS - La Formule Occitane */
 
 * {
     margin: 0;
@@ -25,7 +24,6 @@ body {
     position: relative;
 }
 
-/* Système amélioré de triple fond pour transitions ultra-fluides */
 .bg-container {
     position: fixed;
     top: 0;
@@ -45,14 +43,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bg-layer.active {
     opacity: 1;
 }
 
-/* Overlay sombre pour lisibilité */
 .overlay {
     position: fixed;
     top: 0;
@@ -63,7 +60,6 @@ body {
     z-index: -1;
 }
 
-/* HEADER */
 header {
     background: var(--noir);
     color: white;
@@ -140,7 +136,6 @@ nav a.active {
     font-weight: bold;
 }
 
-/* HERO SECTION */
 .hero {
     background: linear-gradient(135deg, var(--noir) 0%, var(--gris-fonce) 50%, var(--rouge-tres-sombre) 100%);
     color: white;
@@ -200,7 +195,6 @@ nav a.active {
     }
 }
 
-/* PAGE HEADER */
 .page-header {
     background: linear-gradient(135deg, var(--noir) 0%, var(--gris-fonce) 50%, var(--rouge-tres-sombre) 100%);
     color: white;
@@ -224,7 +218,6 @@ nav a.active {
     color: var(--gris-clair);
 }
 
-/* BUTTONS */
 .btn {
     background: var(--rouge-principal);
     color: white;
@@ -259,7 +252,6 @@ nav a.active {
     box-shadow: none;
 }
 
-/* SECTIONS */
 section {
     max-width: 1200px;
     margin: 4rem auto;
@@ -273,7 +265,6 @@ h2 {
     text-align: center;
 }
 
-/* INTRO SECTION (Page d'accueil) */
 .intro-section {
     padding: 4rem 2rem;
 }
@@ -324,7 +315,6 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-/* ANIMATIONS AU SCROLL */
 .fade-in {
     opacity: 0;
     transform: translateY(50px);
@@ -369,7 +359,6 @@ h2 {
     transform: scale(1);
 }
 
-/* PRODUITS */
 .produits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -399,6 +388,23 @@ h2 {
     justify-content: center;
     font-size: 3rem;
     color: var(--rouge-principal);
+    position: relative;
+    overflow: hidden;
+}
+
+.produit-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.produit-card:hover .produit-img img {
+    transform: scale(1.1);
+}
+
+.produit-img .emoji-placeholder {
+    font-size: 3rem;
 }
 
 .produit-info {
@@ -437,7 +443,6 @@ h2 {
     width: 100%;
 }
 
-/* PROCESSUS */
 .processus {
     background: var(--gris-moyen);
     padding: 3rem 2rem;
@@ -498,7 +503,6 @@ h2 {
     line-height: 1.8;
 }
 
-/* CONTACT */
 .contact-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -597,7 +601,6 @@ h2 {
     line-height: 1.6;
 }
 
-/* FOOTER */
 footer {
     background: var(--noir);
     color: white;
@@ -644,7 +647,6 @@ footer {
     color: #888;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
