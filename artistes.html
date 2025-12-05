@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Formule Occitane - Nos Artistes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-container" id="bgContainer"></div>
+    <div class="overlay"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-circle">
+                        <img src="assets/logo.png" alt="Formule Occitane Logo">
+                    </div>
+                    <span class="logo-text">La Formule Occitane</span>
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="processus.html">Notre Processus</a></li>
+                <li><a href="artistes.html" class="active">Nos Artistes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Nos Artistes Occitans</h1>
+        <p>Découvrez les talents qui transforment nos pièces de course en œuvres d'art uniques</p>
+    </section>
+
+    <section id="artistes">
+        <div class="artistes-grid">
+            <!-- Artiste 1 -->
+            <div class="artiste-card zoom-in">
+                <div class="artiste-photo">
+                    <img src="assets/artistes/maye.jpg" alt="Maye" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji-placeholder\'>🎨</span>'">
+                    <div class="artiste-overlay">
+                        <span class="artiste-specialite">Street Art & Design</span>
+                    </div>
+                </div>
+                <div class="artiste-info">
+                    <h3>Maye</h3>
+                    <p class="artiste-location">📍 Toulouse, Occitanie</p>
+                    <p class="artiste-bio">Artiste passionnée spécialisée dans le street art et le design contemporain. Maye apporte une touche urbaine et dynamique à chaque pièce automobile qu'elle customise.</p>
+                    
+                    <div class="artiste-specialites">
+                        <span class="tag">Graffiti</span>
+                        <span class="tag">Design graphique</span>
+                        <span class="tag">Peinture aérosol</span>
+                    </div>
+
+                    <div class="artiste-contact">
+                        <h4>Contacter Maye</h4>
+                        <div class="contact-links">
+                            <a href="https://www.instagram.com/maye_name_is_maye?igsh=MXI2eTdsMHB0Z29nYQ==" target="_blank" class="social-link instagram">
+                                <span class="social-icon">📷</span>
+                                <span>@maye_name_is_maye</span>
+                            </a>
+                            <a href="mailto:maye@formuleoccitane.fr" class="social-link email">
+                                <span class="social-icon">✉️</span>
+                                <span>maye@formuleoccitane.fr</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="artiste-realisations">
+                        <h4>Créations réalisées :</h4>
+                        <ul>
+                            <li>Aileron F1 Customisé</li>
+                            <li>Prise d'Air F4</li>
+                            <li>Pontons F1 Décorés</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artiste 2 -->
+            <div class="artiste-card zoom-in">
+                <div class="artiste-photo">
+                    <img src="assets/artistes/mademoisellekat.jpg" alt="Mademoiselle Kat" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'emoji-placeholder\'>🎨</span>'">
+                    <div class="artiste-overlay">
+                        <span class="artiste-specialite">Illustration & Art figuratif</span>
+                    </div>
+                </div>
+                <div class="artiste-info">
+                    <h3>Mademoiselle Kat</h3>
+                    <p class="artiste-location">📍 Montpellier, Occitanie</p>
+                    <p class="artiste-bio">Illustratrice talentueuse reconnue pour son style unique mêlant art figuratif et imagination débordante. Elle donne vie aux pièces automobiles avec poésie et créativité.</p>
+                    
+                    <div class="artiste-specialites">
+                        <span class="tag">Illustration</span>
+                        <span class="tag">Art figuratif</span>
+                        <span class="tag">Peinture fine</span>
+                    </div>
+
+                    <div class="artiste-contact">
+                        <h4>Contacter Mademoiselle Kat</h4>
+                        <div class="contact-links">
+                            <a href="https://www.instagram.com/mademoisellekat/" target="_blank" class="social-link instagram">
+                                <span class="social-icon">📷</span>
+                                <span>@mademoisellekat</span>
+                            </a>
+                            <a href="mailto:mademoisellekat@formuleoccitane.fr" class="social-link email">
+                                <span class="social-icon">✉️</span>
+                                <span>mademoisellekat@formuleoccitane.fr</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="artiste-realisations">
+                        <h4>Créations réalisées :</h4>
+                        <ul>
+                            <li>Moyeu de Roue F4</li>
+                            <li>Tableau de Bord F4</li>
+                            <li>Collecteur d'Échappement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collaboration-section fade-in">
+            <h2>Vous êtes artiste ?</h2>
+            <p>Nous sommes toujours à la recherche de nouveaux talents pour rejoindre notre collectif d'artistes occitans. Si vous êtes passionné par l'art automobile et souhaitez collaborer avec nous, n'hésitez pas à nous contacter !</p>
+            <a href="contact.html" class="btn">Rejoignez-nous</a>
+        </div>
+    </section>
+
+    <footer class="fade-in">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>La Formule Occitane</h3>
+                <p>Art automobile unique en Occitanie</p>
+                <p style="margin-top: 1rem;">📍 Toulouse, Occitanie</p>
+                <p>📧 contact@formuleoccitane.fr</p>
+                <p>📞 +33 5 XX XX XX XX</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="produits.html">Nos Produits</a></li>
+                    <li><a href="processus.html">Notre Processus</a></li>
+                    <li><a href="artistes.html">Nos Artistes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Mentions Légales</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">Politique de Confidentialité</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-Nous</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 La Formule Occitane. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

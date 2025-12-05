@@ -1,8 +1,9 @@
 const pageBackgrounds = {
     'index.html': ['assets/bg1.jpg', 'assets/bg2.jpg'],
     'produits.html': ['assets/bg3.jpg', 'assets/bg4.jpg'],
-    'processus.html': ['assets/bg5.jpg', 'assets/bg6.jpg'],
-    'contact.html': ['assets/bg7.jpg', 'assets/bg8.jpg']
+    'artistes.html': ['assets/bg5.jpg', 'assets/bg6.jpg'],
+    'processus.html': ['assets/bg7.jpg', 'assets/bg8.jpg'],
+    'contact.html': ['assets/bg9.jpg', 'assets/bg10.jpg']
 };
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
